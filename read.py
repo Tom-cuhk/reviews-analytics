@@ -6,5 +6,16 @@ with open('reviews.txt', 'r') as f:
 		count += 1
 		if count % 1000 ==0:
 			print(len(data))
-print(len(data))
-print(data[0])
+print('There are total ', len(data), 'reviews')
+
+i = 0
+word = 0
+while i < len(data):
+	word = word + len(data[i].split()) #To calculate the number of word (not the number of letter)
+	i += 1
+print('The average number of word in each review is ', word/len(data))
+
+sum_len = 0
+for d in data:
+	sum_len = sum_len + len(d)
+print('The average number of letter in each review is ', sum_len/len(data))
