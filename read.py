@@ -3,9 +3,9 @@ count = 0
 with open('reviews.txt', 'r') as f:
 	for line in f:
 		data.append(line)
-		count += 1
-		if count % 1000 ==0:
-			print(len(data))
+		# count += 1
+		#if count % 1000 ==0:
+			#print(len(data))
 print('There are total ', len(data), 'reviews')
 
 i = 0
@@ -39,3 +39,10 @@ print('Total ', len(new1), 'comments with more than 200 letters')
 print(new1[0])
 print('Total ', len(new2), 'comments with more than 100 words')
 print(new2[0])
+
+#To look for the word of "good" in the comments
+good = []
+for d in data:
+	if 'good' in d.split():
+		good.append(d)
+print('There are ', len(good), 'comments with the word - good !')
